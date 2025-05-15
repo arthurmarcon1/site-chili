@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chili | Moda com Tempero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay {
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: #333;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            color: #e53e3e;
+            margin-right: 8px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Top Bar -->
+    <div class="bg-gray-100 text-xs py-2 px-4 flex justify-between items-center">
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-600">Acompanhe seu pedido</a>
+            <a href="#" class="hover:text-gray-600">Atendimento</a>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="hover:text-gray-600"><i class="fas fa-store mr-1"></i> Nossas lojas</a>
+            <a href="#" class="hover:text-gray-600"><i class="fas fa-heart mr-1"></i> Favoritos</a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Logo -->
+                <div class="text-2xl font-bold heading-font">
+                    <a href="#" class="logo">
+                        <i class="fas fa-pepper-hot logo-icon"></i>
+                        CHILI
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <div class="dropdown relative">
+                        <a href="#" class="nav-link">Feminino</a>
+                        <div class="dropdown-menu absolute hidden bg-white mt-2 py-2 w-48 shadow-lg">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Vestidos</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Blusas</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Calças</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Novidades</a>
+                        </div>
+                    </div>
+                    <div class="dropdown relative">
+                        <a href="#" class="nav-link">Masculino</a>
+                        <div class="dropdown-menu absolute hidden bg-white mt-2 py-2 w-48 shadow-lg">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Camisas</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Calças</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Casacos</a>
+                        </div>
+                    </div>
+                    <a href="#" class="nav-link">Coleções</a>
+                    <a href="#" class="nav-link">Sustentabilidade</a>
+                </nav>
+
+                <!-- Icons -->
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="#" class="text-gray-700 hover:text-gray-900 relative">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span
+                            class="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-image h-screen flex items-center justify-center text-center text-white">
+        <div class="px-6">
+            <h1 class="heading-font text-4xl md:text-6xl font-light mb-6">Coleção Picante 2023</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Pedaços únicos com muito tempero. Descubra nossa
+                seleção de peças cheias de personalidade.</p>
+            <a href="#"
+                class="border border-white px-8 py-3 hover:bg-white hover:text-black transition duration-300">Compre
+                agora</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto">
+            <h2 class="heading-font text-3xl text-center mb-12">Explore nossas categorias</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Vestidos"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-xl heading-font">Vestidos</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80"
+                            alt="Blusas"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-xl heading-font">Blusas</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Calças"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-xl heading-font">Calças</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1595341595379-cf2df1f27b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Acessórios"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-xl heading-font">Acessórios</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="heading-font text-3xl text-center mb-4">Novidades</h2>
+            <p class="text-center text-gray-600 mb-12">As peças mais desejadas da temporada</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card relative bg-white">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Vestido Floral" class="w-full h-80 object-cover">
+                        <div
+                            class="product-overlay absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-2">Visualizar</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium">Vestido Floral Midi</h3>
+                        <p class="text-gray-600 text-sm">R$ 299,90</p>
+                        <div class="flex mt-2">
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-300"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-1">(42)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card relative bg-white">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Camisa Listrada" class="w-full h-80 object-cover">
+                        <div
+                            class="product-overlay absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-2">Visualizar</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium">Camisa Listrada</h3>
+                        <p class="text-gray-600 text-sm">R$ 189,90</p>
+                        <div class="flex mt-2">
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-1">(36)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card relative bg-white">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595341595379-cf2df1f27b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Calça Wide Leg" class="w-full h-80 object-cover">
+                        <div
+                            class="product-overlay absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-2">Visualizar</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium">Calça Wide Leg</h3>
+                        <p class="text-gray-600 text-sm">R$ 249,90</p>
+                        <div class="flex mt-2">
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-300"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-1">(28)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card relative bg-white">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Blazer Bege" class="w-full h-80 object-cover">
+                        <div
+                            class="product-overlay absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <button class="bg-white text-black px-6 py-2">Visualizar</button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-medium">Blazer Bege</h3>
+                        <p class="text-gray-600 text-sm">R$ 399,90</p>
+                        <div class="flex mt-2">
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-yellow-400"><i class="fas fa-star"></i></span>
+                            <span class="text-gray-600 text-sm ml-1">(51)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="border border-black px-8 py-3 hover:bg-black hover:text-white transition duration-300">Ver
+                    todos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability -->
+    <section class="py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Sustentabilidade" class="w-full h-auto rounded-lg shadow-md">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="heading-font text-3xl mb-4">Moda com Tempero</h2>
+                    <p class="text-gray-600 mb-4">Na Chili, acreditamos que a moda deve ter personalidade e atitude.
+                        Cada peça é criada para dar aquele toque especial ao seu visual.</p>
+                    <p class="text-gray-600 mb-6">Utilizamos materiais de qualidade e processos criativos que garantem
+                        peças únicas e cheias de estilo para o seu guarda-roupa.</p>
+                    <a href="#"
+                        class="text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600">Saiba
+                        mais sobre nossa abordagem</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 px-6 bg-gray-100">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="heading-font text-3xl mb-4">Receba nossas novidades</h2>
+            <p class="text-gray-600 mb-8">Cadastre-se para receber lançamentos, promoções exclusivas e inspirações de
+                estilo.</p>
+            <form class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Seu melhor e-mail"
+                    class="flex-grow px-4 py-3 border border-gray-300 focus:outline-none focus:border-black">
+                <button type="submit"
+                    class="bg-black text-white px-6 py-3 hover:bg-gray-800 transition duration-300">Assinar</button>
+            </form>
+            <p class="text-xs text-gray-500 mt-4">Ao se inscrever, você concorda com nossa Política de Privacidade.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="heading-font text-xl mb-4">
+                        <span class="logo">
+                            <i class="fas fa-pepper-hot logo-icon"></i>
+                            CHILI
+                        </span>
+                    </h3>
+                    <p class="text-gray-400 mb-4">Moda cheia de personalidade e atitude. Peças selecionadas para dar
+                        aquele tempero ao seu visual.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Institucional</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sobre nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustentabilidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trabalhe conosco</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Nossas lojas</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Ajuda</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Atendimento</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Perguntas frequentes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Trocas e devoluções</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">contato@chilimoda.com.br</li>
+                        <li class="text-gray-400">(11) 1234-5678</li>
+                        <li class="text-gray-400">Segunda a sexta, das 9h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Chili Moda. Todos os direitos reservados.</p>
+                <div class="flex space-x-4">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="American Express" class="h-6">
+                    <img src="https://via.placeholder.com/40x25" alt="Pix" class="h-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('header button').addEventListener('click', function () {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-full');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('shadow-md');
+        });
+
+        // Dropdown menus
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('a');
+            const menu = dropdown.querySelector('.dropdown-menu');
+
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.toggle('hidden');
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.add('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
